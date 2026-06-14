@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f7f3ea;
+  --color-paper-2: #f0eadc;
+  --color-card: #fdfbf6;
+  --color-ink: #1b1710;
+  --color-ink-soft: #443d31;
+  --color-muted: #837a68;
+  --color-accent: #9c3b2c;
+  --color-accent-soft: #bd5638;
+  --color-line: #e2d9c7;
+  --color-line-strong: #cfc3aa;
+
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  --shadow-soft: 0 1px 2px rgba(27, 23, 16, 0.04), 0 12px 40px -16px rgba(27, 23, 16, 0.18);
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* Subtle paper grain via radial gradient layer */
+.grain-bg {
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(156, 59, 44, 0.045), transparent 38%),
+    radial-gradient(circle at 85% 8%, rgba(156, 59, 44, 0.04), transparent 34%);
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
