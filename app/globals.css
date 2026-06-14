@@ -1,25 +1,40 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #f7f3ea;
-  --color-paper-2: #f0eadc;
-  --color-card: #fdfbf6;
-  --color-ink: #1b1710;
-  --color-ink-soft: #443d31;
-  --color-muted: #837a68;
-  --color-accent: #9c3b2c;
-  --color-accent-soft: #bd5638;
-  --color-line: #e2d9c7;
-  --color-line-strong: #cfc3aa;
+  /* Surfaces — deep midnight navy (trust + technology) */
+  --color-paper: #0a1428;
+  --color-paper-2: #0c1730;
+  --color-card: #111f3a;
 
-  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  /* Text */
+  --color-ink: #f5f8ff;
+  --color-ink-soft: #aebbd2;
+  --color-muted: #7e8ea8;
+
+  /* Accents — electric cyan/blue (technology) */
+  --color-accent: #22d3ee;
+  --color-accent-2: #3b82f6;
+
+  /* Call to action — amber (sales energy, conversion) */
+  --color-cta: #f59e0b;
+  --color-cta-soft: #fbbf24;
+
+  /* Feedback */
+  --color-danger: #f87171;
+
+  /* Hairlines on dark */
+  --color-line: rgba(255, 255, 255, 0.1);
+  --color-line-strong: rgba(255, 255, 255, 0.22);
+
+  --font-display: "Space Grotesk", "SF Pro Display", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 
-  --shadow-soft: 0 1px 2px rgba(27, 23, 16, 0.04), 0 12px 40px -16px rgba(27, 23, 16, 0.18);
+  --shadow-soft: 0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 20px 50px -24px rgba(0, 0, 0, 0.7);
 }
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 html {
@@ -30,7 +45,6 @@ body {
   background-color: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans);
-  font-feature-settings: "ss01", "cv01";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -38,14 +52,14 @@ body {
 
 ::selection {
   background: var(--color-accent);
-  color: #fff;
+  color: #06202a;
 }
 
-/* Subtle paper grain via radial gradient layer */
+/* Radial cyan/blue glow layer for hero + CTA sections */
 .grain-bg {
   background-image:
-    radial-gradient(circle at 18% 12%, rgba(156, 59, 44, 0.045), transparent 38%),
-    radial-gradient(circle at 85% 8%, rgba(156, 59, 44, 0.04), transparent 34%);
+    radial-gradient(1100px 520px at 20% 8%, rgba(34, 211, 238, 0.12), transparent 58%),
+    radial-gradient(900px 480px at 88% 0%, rgba(59, 130, 246, 0.12), transparent 55%);
 }
 
 /* Scroll reveal */

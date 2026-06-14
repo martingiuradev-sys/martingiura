@@ -13,9 +13,9 @@ export function Hero() {
             {t.hero.eyebrow}
           </p>
 
-          <h1 className="font-display text-[2.6rem] font-medium leading-[1.05] tracking-[-0.02em] text-ink sm:text-6xl md:text-[4.4rem]">
+          <h1 className="font-display text-[2.6rem] font-semibold leading-[1.05] tracking-[-0.02em] text-ink sm:text-6xl md:text-[4.4rem]">
             {t.hero.titleLead}{" "}
-            <span className="italic text-accent">{t.hero.titleEmphasis}</span>{" "}
+            <span className="text-accent">{t.hero.titleEmphasis}</span>{" "}
             {t.hero.titleTail}
           </h1>
 
@@ -26,14 +26,14 @@ export function Hero() {
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-paper transition-transform hover:-translate-y-0.5 hover:bg-accent"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-cta px-7 py-3.5 text-sm font-semibold text-paper shadow-[0_12px_34px_-10px_rgba(245,158,11,0.6)] transition-transform hover:-translate-y-0.5 hover:bg-cta-soft"
             >
               {t.hero.ctaPrimary}
               <span aria-hidden>→</span>
             </a>
             <a
               href="#story"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-line-strong px-7 py-3.5 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-card"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-line-strong px-7 py-3.5 text-sm font-medium text-ink transition-colors hover:border-accent hover:bg-card"
             >
               {t.hero.ctaSecondary}
             </a>

@@ -106,14 +106,14 @@ export function ContactForm() {
             {f.name}
           </label>
           <input id="name" name="name" type="text" placeholder={f.name} className={fieldClass} />
-          {errors.name && <p className="mt-1.5 text-sm text-accent">{errors.name}</p>}
+          {errors.name && <p className="mt-1.5 text-sm text-danger">{errors.name}</p>}
         </div>
         <div>
           <label htmlFor="email" className="sr-only">
             {f.email}
           </label>
           <input id="email" name="email" type="email" placeholder={f.email} className={fieldClass} />
-          {errors.email && <p className="mt-1.5 text-sm text-accent">{errors.email}</p>}
+          {errors.email && <p className="mt-1.5 text-sm text-danger">{errors.email}</p>}
         </div>
       </div>
 
@@ -135,17 +135,17 @@ export function ContactForm() {
           placeholder={f.message}
           className={`${fieldClass} resize-none`}
         />
-        {errors.message && <p className="mt-1.5 text-sm text-accent">{errors.message}</p>}
+        {errors.message && <p className="mt-1.5 text-sm text-danger">{errors.message}</p>}
       </div>
 
       {status === "error" && (
-        <p className="text-sm text-accent">{f.error}</p>
+        <p className="text-sm text-danger">{f.error}</p>
       )}
 
       <button
         type="submit"
         disabled={status === "sending"}
-        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-8 py-4 text-sm font-medium text-paper transition-all hover:bg-accent disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-cta px-8 py-4 text-sm font-semibold text-paper shadow-[0_12px_34px_-10px_rgba(245,158,11,0.6)] transition-all hover:bg-cta-soft disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
       >
         {status === "sending" ? f.sending : f.submit}
         {status !== "sending" && <span aria-hidden>→</span>}

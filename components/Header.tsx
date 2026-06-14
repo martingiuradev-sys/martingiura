@@ -58,7 +58,7 @@ export function Header() {
                 aria-pressed={lang === code}
                 className={`rounded-full px-2.5 py-1 uppercase tracking-wide transition-colors ${
                   lang === code
-                    ? "bg-ink text-paper"
+                    ? "bg-accent text-paper"
                     : "text-muted hover:text-ink"
                 }`}
               >
@@ -69,7 +69,7 @@ export function Header() {
 
           <a
             href="#contact"
-            className="hidden rounded-full bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-soft sm:inline-flex"
+            className="hidden rounded-full bg-cta px-4 py-2 text-sm font-semibold text-paper transition-colors hover:bg-cta-soft sm:inline-flex"
           >
             {t.nav.cta}
           </a>
